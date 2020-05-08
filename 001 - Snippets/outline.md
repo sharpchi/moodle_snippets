@@ -1,5 +1,7 @@
 # 001 - Snippets
 
+- Use snippets
+    - CTRL + Shift + P
 - Create snippet
 - Tab stops
 - Placeholders
