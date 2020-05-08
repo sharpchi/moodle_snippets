@@ -31,8 +31,8 @@
 			"// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.",
 			"",
 			"/**",
-			" * @package   ${1:package}",
-			" * @author    Mark Sharp <m.sharp@chi.ac.uk",
+			" * @package   ${1|block,local,mod,report,theme,tool|}_${2:package}",
+			" * @author    Mark Sharp <m.sharp@chi.ac.uk>",
 			" * @copyright ${CURRENT_YEAR} University of Chichester {@link www.chi.ac.uk}",
 			" * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later",
 			"*/",
@@ -40,6 +40,22 @@
 			"defined('MOODLE_INTERNAL') || die();",
 			"",
 			"${0}"
+		]
+	},
+	"Moodle version": {
+		"prefix": "moodleversion",
+		"body": [
+			"$$plugin->version   = ${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}00;",
+			"$$plugin->requires  = ${1|2019111800,2019052005|};",
+			"$$plugin->component = '${2|block,local,mod,theme,report|}_${3:component}';"
+		]
+	},
+	"Moodle dependency": {
+		"prefix": "moodledependency",
+		"body": [
+			"$$plugin->dependencies = [",
+			"    '${1:component}' => ${2:version}",
+			"];"
 		]
 	}
 }
